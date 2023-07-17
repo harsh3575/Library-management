@@ -1,0 +1,361 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #F4F4F4;
+}
+
+ul .active {
+  color: #1C04FC;
+}
+
+ul .active:hover {
+  color: #1C04FC;
+}
+
+
+
+.ani {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.hero-sec {
+  background-image: url('./assets/lib1.jpg');
+}
+
+/* Loader CSS */
+
+.load {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1.5);
+}
+
+.loader {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  border: 4.6px solid #0000;
+  border-radius: 100%;
+  border-color: #008cff #0000;
+  animation: spinner-e04l1k 0.5s infinite linear;
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  grid-area: 1/1;
+  margin: 8px;
+  border: inherit;
+  border-radius: 50%;
+}
+
+.loader::before {
+  border-color: #048be6 #0000;
+  animation: inherit;
+  animation-duration: 0.4s;
+}
+
+.loader::after {
+  margin: 2.9px;
+}
+
+@keyframes spinner-e04l1k {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+/* Second Loader  */
+.load2 {
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+}
+
+.spinner {
+  border: 0 solid transparent;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.loader2 {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+}
+
+.loader2::before,
+.loader2::after {
+  content: '';
+  border: 3px solid #505065;
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  opacity: 1;
+}
+
+.l1::before,
+.l1::after {
+  animation: clockwiseZ 2.5s infinite;
+}
+
+.l2::after,
+.l2::before {
+  animation: anticlockwiseZ 2.5s infinite;
+}
+
+@keyframes clockwiseZ {
+
+  0%,
+  100% {
+    transform: rotateY(0);
+  }
+
+  50% {
+    transform: rotateY(180deg) skew(-10deg, -5deg);
+  }
+}
+
+@keyframes anticlockwiseZ {
+
+  0%,
+  100% {
+    transform: rotateX(0);
+  }
+
+  50% {
+    transform: rotateX(-180deg) skew(10deg, 5deg);
+  }
+}
+
+
+/* admin navbar */
+
+
+#Main {
+  height: 100vh
+}
+
+
+
+#avtar {
+  top: 94.5%;
+  position: fixed;
+}
+
+/* Admin */
+
+.btn {
+  width: 140px;
+  height: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn span {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: top 0.5s;
+}
+
+.btn-text-one {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.btn-text-two {
+  position: absolute;
+  width: 100%;
+  top: 150%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.btn:hover .btn-text-one {
+  top: -100%;
+}
+
+.btn:hover .btn-text-two {
+  top: 50%;
+}
+
+
+
+/* Dashbord Loader */
+
+.loader3 {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite
+}
+
+.loader3::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #87bded;
+  animation: prixClipFix 2s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+  }
+
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+  }
+
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+  }
+
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+  }
+
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+  }
+}
+
+
+.pagination {
+  @apply inline-flex -space-x-px;
+}
+
+.page-item {
+  @apply px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-lg;
+}
+
+.page-link {
+  @apply rounded-ss-md;
+}
+
+.page-item:hover {
+  @apply text-gray-700 bg-gray-100
+}
+
+.pagination .active {
+  @apply bg-gray-200
+}
+
+#pageSetting {
+  position: fixed;
+  bottom: 12%;
+  left: 50%;
+}
+
+.l2 {
+  height: 69.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 45%;
+}
+
+#footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+
+}
+
+#contact {
+  position: absolute;
+  height: 92.4%;
+  width: 100%;
+  background-image: url('./assets/lib1.jpg');
+}
+
+#contact-main {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+.loader4 {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+}
+
+.loader4::after,
+.loader4::before {
+  content: '';
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 4px solid black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+
+.loader4::after {
+  animation-delay: 1s;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
